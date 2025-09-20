@@ -620,8 +620,15 @@ function getHypotenuse(a, b) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  let sum = 0;
+  const step = number >= 0 ? 1 : -1;
+
+  for (let i = step; Math.abs(i) <= Math.abs(number); i += step) {
+    if (i % 2 !== 0) sum += 1;
+  }
+
+  return sum;
 }
 
 module.exports = {
